@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لوحة التحكم — الأثر</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin">
+
+  <!-- تسجيل الدخول -->
+  <section class="login" id="login">
+    <form class="login-card" id="loginForm">
+      <img src="assets/logo-mark.svg" alt="" width="72" height="72">
+      <h1>لوحة تحكم الأثر</h1>
+      <p>أدخل كلمة السر للمتابعة</p>
+      <label class="field"><span>كلمة السر</span><input type="password" id="loginPass" autocomplete="current-password" required></label>
+      <p class="err" id="loginErr" hidden></p>
+      <button class="btn block" type="submit" id="loginBtn">دخول</button>
+      <a class="link" href="index.html">العودة إلى المتجر</a>
+    </form>
+  </section>
+
+  <!-- اللوحة -->
+  <div class="shell" id="shell" hidden>
+    <aside class="side">
+      <a class="brand" href="index.html" target="_blank" rel="noopener">
+        <img src="assets/logo-mark.svg" alt="">
+        <div><div class="brand-name">الأثر</div><div class="brand-sub">ADMIN</div></div>
+      </a>
+      <nav class="tabs" id="tabs">
+        <button type="button" data-tab="overview" aria-current="true">نظرة عامة</button>
+        <button type="button" data-tab="orders">الطلبات <span class="pill" id="newPill" hidden></span></button>
+        <button type="button" data-tab="products">المنتجات</button>
+        <button type="button" data-tab="categories">الأقسام</button>
+        <button type="button" data-tab="settings">الإعدادات</button>
+      </nav>
+      <div class="side-foot">
+        <a class="link" href="index.html" target="_blank" rel="noopener">عرض المتجر</a>
+        <button class="link" type="button" id="logoutBtn">تسجيل الخروج</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <!-- نظرة عامة -->
+      <section class="panel" id="tab-overview">
+        <div class="panel-head"><h1>نظرة عامة</h1><button class="btn ghost sm" type="button" data-refresh>تحديث</button></div>
+        <div class="stats" id="stats"></div>
+        <div class="two">
+          <div class="box"><h2>مبيعات آخر 14 يوماً</h2><div class="chart" id="chart"></div></div>
+          <div class="box"><h2>الأكثر مبيعاً</h2><div id="top"></div>
+            <h2 style="margin-top:22px">مخزون منخفض</h2><div id="low"></div></div>
+        </div>
+      </section>
+
+      <!-- الطلبات -->
+      <section class="panel" id="tab-orders" hidden>
+        <div class="panel-head"><h1>الطلبات</h1>
+          <div class="chips" id="orderFilter"></div>
+        </div>
+        <div id="orders"></div>
+      </section>
+
+      <!-- المنتجات -->
+      <section class="panel" id="tab-products" hidden>
+        <div class="panel-head"><h1>المنتجات</h1><button class="btn sm" type="button" id="newProduct">+ منتج جديد</button></div>
+        <div class="table-wrap"><table class="table" id="products"></table></div>
+      </section>
+
+      <!-- الأقسام -->
+      <section class="panel" id="tab-categories" hidden>
+        <div class="panel-head"><h1>الأقسام</h1><button class="btn sm" type="button" id="newCategory">+ قسم جديد</button></div>
+        <div class="table-wrap"><table class="table" id="categories"></table></div>
+      </section>
+
+      <!-- الإعدادات -->
+      <section class="panel" id="tab-settings" hidden>
+        <div class="panel-head"><h1>الإعدادات</h1></div>
+        <div class="two">
+          <form class="box" id="settingsForm">
+            <h2>بيانات المتجر</h2>
+            <div class="row2">
+              <label class="field"><span>رمز العملة</span><input name="currency" maxlength="8"></label>
+              <label class="field"><span>رسوم التوصيل</span><input name="shipping_fee" type="number" min="0" step="0.01" dir="ltr"></label>
+            </div>
+            <label class="field"><span>شريط الإعلان العلوي</span><input name="announcement"></label>
+            <label class="field"><span>عنوان الواجهة</span><input name="hero_title"></label>
+            <label class="field"><span>وصف الواجهة</span><textarea name="hero_subtitle"></textarea></label>
+            <h2>التواصل</h2>
+            <div class="row2">
+              <label class="field"><span>واتساب (مع رمز الدولة)</span><input name="whatsapp" dir="ltr" inputmode="tel"></label>
+              <label class="field"><span>إنستغرام (اسم الحساب)</span><input name="instagram" dir="ltr"></label>
+              <label class="field"><span>الهاتف</span><input name="phone" dir="ltr" inputmode="tel"></label>
+              <label class="field"><span>البريد الإلكتروني</span><input name="email" type="email" dir="ltr"></label>
+            </div>
+            <button class="btn" type="submit">حفظ الإعدادات</button>
+          </form>
+          <form class="box" id="passForm">
+            <h2>تغيير كلمة السر</h2>
+            <label class="field"><span>كلمة السر الحالية</span><input name="old" type="password" autocomplete="current-password" required></label>
+            <label class="field"><span>كلمة السر الجديدة (6 أحرف على الأقل)</span><input name="new" type="password" autocomplete="new-password" minlength="6" required></label>
+            <button class="btn ghost" type="submit">تغيير كلمة السر</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- نموذج المنتج -->
+  <dialog id="productDialog">
+    <button class="x" type="button" data-close aria-label="إغلاق">×</button>
+    <form class="form" id="productForm">
+      <h2 id="productFormTitle">منتج جديد</h2>
+      <input type="hidden" name="id">
+      <input type="hidden" name="image_url">
+      <div class="form-grid">
+        <div>
+          <div class="preview" id="preview"></div>
+          <label class="btn ghost sm block upload">رفع صورة<input type="file" id="imageFile" accept="image/jpeg,image/png,image/webp" hidden></label>
+          <button class="link" type="button" id="removeImage" hidden>إزالة الصورة</button>
+          <p class="hint">بدون صورة يظهر رسم القطعة بلون العرض.</p>
+        </div>
+        <div>
+          <label class="field"><span>اسم المنتج</span><input name="name" required></label>
+          <label class="field"><span>الوصف</span><textarea name="description"></textarea></label>
+          <div class="row2">
+            <label class="field"><span>السعر</span><input name="price" type="number" min="0" step="0.01" dir="ltr" required></label>
+            <label class="field"><span>السعر قبل الخصم (اختياري)</span><input name="old_price" type="number" min="0" step="0.01" dir="ltr"></label>
+            <label class="field"><span>القسم</span><select name="category_id"></select></label>
+            <label class="field"><span>الكمية في المخزون</span><input name="stock" type="number" min="0" step="1" dir="ltr" required></label>
+          </div>
+          <label class="field"><span>المقاسات (افصل بينها بفاصلة)</span><input name="sizes" dir="ltr" placeholder="S, M, L, XL"></label>
+          <div class="row2">
+            <label class="field"><span>لون العرض</span><input name="color" type="color" value="#B08968"></label>
+            <div class="checks">
+              <label><input type="checkbox" name="is_active" checked> ظاهر في المتجر</label>
+              <label><input type="checkbox" name="is_featured"> قطعة مختارة</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="err" id="productErr" hidden></p>
+      <div class="form-actions">
+        <button class="btn" type="submit" id="productSave">حفظ</button>
+        <button class="btn ghost" type="button" data-close>إلغاء</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- نموذج القسم -->
+  <dialog id="categoryDialog" style="width:min(460px,calc(100% - 28px))">
+    <button class="x" type="button" data-close aria-label="إغلاق">×</button>
+    <form class="form" id="categoryForm">
+      <h2 id="categoryFormTitle">قسم جديد</h2>
+      <input type="hidden" name="id">
+      <label class="field"><span>اسم القسم</span><input name="name" required></label>
+      <div class="row2">
+        <label class="field"><span>شكل القطعة</span><select name="icon"></select></label>
+        <label class="field"><span>الترتيب</span><input name="sort" type="number" step="1" dir="ltr" value="0"></label>
+      </div>
+      <div class="form-actions">
+        <button class="btn" type="submit">حفظ</button>
+        <button class="btn ghost" type="button" data-close>إلغاء</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- تأكيد -->
+  <dialog id="confirmDialog" style="width:min(420px,calc(100% - 28px))">
+    <div class="form">
+      <h2 id="confirmText"></h2>
+      <div class="form-actions">
+        <button class="btn clay" type="button" id="confirmYes">نعم، احذف</button>
+        <button class="btn ghost" type="button" data-close>تراجع</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/garments.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

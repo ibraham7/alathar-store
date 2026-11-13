@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الأثر — ملابس رجالية</title>
+  <meta name="description" content="الأثر — ملابس رجالية بخامات طبيعية وألوان الأرض.">
+  <meta name="theme-color" content="#3B2A20">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/motion.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <svg viewBox="0 0 64 64" fill="none">
+        <circle class="ring" cx="32" cy="32" r="28" stroke="#C9A77C" stroke-width="1"/>
+        <path class="alif" d="M39 15v30" stroke="#EFE4D2" stroke-width="5" stroke-linecap="round"/>
+        <circle class="dot" cx="29.5" cy="46" r="3.1" fill="#C97B4A"/>
+        <circle class="dot" cx="21.2" cy="44.2" r="2.3" fill="#C97B4A" opacity=".75"/>
+        <circle class="dot" cx="14.6" cy="40.6" r="1.6" fill="#C97B4A" opacity=".5"/>
+      </svg>
+      <div class="loader-name">الأثر</div>
+      <div class="loader-sub">AL ATHAR</div>
+    </div>
+  </div>
+  <div class="progress" id="progress"></div>
+  <div class="announce" id="announce" hidden></div>
+
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="الأثر — الرئيسية">
+        <img src="assets/logo-mark.svg" alt="">
+        <div>
+          <div class="brand-name">الأثر</div>
+          <div class="brand-sub">AL ATHAR</div>
+        </div>
+      </a>
+      <nav class="nav" aria-label="التنقل الرئيسي">
+        <a href="#shop">المتجر</a>
+        <a href="#story">قصتنا</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+      <button class="cart-btn magnet" id="cartBtn" type="button" aria-label="فتح السلة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 12H5L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="t">السلة</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="blob a"></div><div class="blob b"></div>
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">ملابس رجالية</span>
+          <h1 id="heroTitle">ما يبقى بعدك… هو الأثر</h1>
+          <p class="lead" id="heroSub">ملابس رجالية بخامات طبيعية وألوان الأرض، مصمّمة لتدوم.</p>
+          <div class="hero-actions">
+            <a class="btn magnet" href="#shop">تسوّق المجموعة</a>
+            <a class="btn ghost magnet" href="#story">قصة الأثر</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="sun"></div>
+          <div class="seal" aria-hidden="true">
+            <svg viewBox="0 0 120 120"><defs><path id="sealPath" d="M60 60m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0"/></defs>
+              <text><textPath href="#sealPath">AL ATHAR · MENSWEAR · AL ATHAR · MENSWEAR ·</textPath></text></svg>
+            <img src="assets/logo-mark.svg" alt="">
+          </div>
+          <button class="arch" id="heroArt" type="button" aria-label="عرض القطعة المختارة"></button>
+          <button class="hero-chip" id="heroChip" type="button"><b>مجموعة الموسم</b><span>درجات الرمل والطين والزيتون</span></button>
+          <div class="dots" id="heroDots" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="values">
+        <div class="wrap">
+          <div class="value" data-reveal style="--i:0"><b>خامات طبيعية</b><span>قطن وكتان بملمس يدوم</span></div>
+          <div class="value" data-reveal style="--i:1"><b>ألوان الأرض</b><span>درجات هادئة تتناسق مع كل شيء</span></div>
+          <div class="value" data-reveal style="--i:2"><b>الدفع عند الاستلام</b><span>اطلب الآن وادفع حين يصلك</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>خامات طبيعية</span><span>ألوان الأرض</span><span>قصّات تدوم</span><span>الدفع عند الاستلام</span><span>لكل خطوة أثر</span><span>ملابس رجالية</span><span>خامات طبيعية</span><span>ألوان الأرض</span><span>قصّات تدوم</span><span>الدفع عند الاستلام</span><span>لكل خطوة أثر</span><span>ملابس رجالية</span></div></div>
+
+    <section class="section" id="shop">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">المتجر</span>
+            <h2>المجموعة</h2>
+          </div>
+          <div class="chips" id="chips" role="group" aria-label="الأقسام"></div>
+        </div>
+        <div class="grid" id="grid" aria-live="polite">
+          <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colors">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">الهوية</span>
+            <h2>ألوان من الأرض</h2>
+          </div>
+        </div>
+        <div class="palette" id="palette" data-reveal>
+          <button class="swatch" type="button" data-n="01" style="--s:#EADDC8;--fg:#3B2A20"><div><b>رمل</b><small>SAND</small></div></button>
+          <button class="swatch" type="button" data-n="02" style="--s:#B08D5B"><div><b>كاميل</b><small>CAMEL</small></div></button>
+          <button class="swatch on" type="button" data-n="03" style="--s:#B5653A"><div><b>طين</b><small>CLAY</small></div></button>
+          <button class="swatch" type="button" data-n="04" style="--s:#6F6B45"><div><b>زيتون</b><small>OLIVE</small></div></button>
+          <button class="swatch" type="button" data-n="05" style="--s:#3B2A20"><div><b>بنّ</b><small>COFFEE</small></div></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story" id="story">
+      <div class="ghost-text" aria-hidden="true">AL ATHAR — AL ATHAR — AL ATHAR</div>
+      <div class="wrap">
+        <img src="assets/logo-mark.svg" alt="" data-reveal>
+        <div data-reveal style="--i:1">
+          <h2>لكل خطوة أثر</h2>
+          <p>نؤمن أن اللباس ليس ما تلبسه اليوم فقط، بل الانطباع الذي تتركه. لذلك نختار خاماتنا بعناية، ونستلهم ألواننا من الأرض: الرمل، الطين، والزيتون — قطع هادئة تدوم وتترك أثرها.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <img src="assets/logo-mark.svg" alt="">
+        <div>
+          <div class="brand-name">الأثر</div>
+          <div class="brand-sub">AL ATHAR</div>
+        </div>
+      </a>
+      <div class="contacts" id="contacts"></div>
+      <div class="copy">© <span id="year"></span> الأثر — جميع الحقوق محفوظة</div>
+    </div>
+  </footer>
+
+  <!-- نافذة المنتج -->
+  <dialog id="productDialog" aria-labelledby="pmName">
+    <button class="x" type="button" data-close aria-label="إغلاق">×</button>
+    <div class="pm" id="pm"></div>
+  </dialog>
+
+  <!-- السلة -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="سلة المشتريات" aria-hidden="true">
+    <div class="drawer-head">
+      <h2 id="drawerTitle">السلة</h2>
+      <button class="x" type="button" id="cartClose" aria-label="إغلاق السلة">×</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot" id="drawerFoot"></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/garments.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/store.js"></script>
+</body>
+</html>

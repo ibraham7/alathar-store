@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="الأثر — AL ATHAR">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&amp;display=swap');
+    .ar { font-family: 'Reem Kufi', 'Segoe UI', Tahoma, sans-serif; font-weight: 600; font-size: 58px; fill: #3B2A20; }
+    .en { font-family: 'Reem Kufi', 'Segoe UI', Tahoma, sans-serif; font-size: 13px; letter-spacing: 7px; fill: #9A6B43; }
+  </style>
+  <rect width="320" height="120" fill="#F4ECDD"/>
+  <g transform="translate(212 20) scale(1.25)">
+    <circle cx="32" cy="32" r="31" fill="#3B2A20"/>
+    <circle cx="32" cy="32" r="27.5" fill="none" stroke="#C9A77C" stroke-width=".8" opacity=".55"/>
+    <path d="M39 15v30" stroke="#EFE4D2" stroke-width="5" stroke-linecap="round"/>
+    <path d="M35.5 12.5c1.2-2.6 4.6-3 6.4-.9" fill="none" stroke="#EFE4D2" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="29.5" cy="46" r="3.1" fill="#C97B4A"/>
+    <circle cx="21.2" cy="44.2" r="2.3" fill="#C97B4A" opacity=".75"/>
+    <circle cx="14.6" cy="40.6" r="1.6" fill="#C97B4A" opacity=".5"/>
+  </g>
+  <text class="ar" x="196" y="72" text-anchor="start" direction="rtl">الأثر</text>
+  <text class="en" x="110" y="98" text-anchor="middle">AL ATHAR</text>
+</svg>
