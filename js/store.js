@@ -94,7 +94,7 @@
     heroI = (i + heroList.length) % heroList.length;
     const p = heroList[heroI], art = $('heroArt'), chip = $('heroChip');
     const paint = () => {
-      art.style.setProperty('--a', isLight(p.color) ? '#B5653A' : '#DCCAAE');
+      art.style.setProperty('--a', isLight(p.color) ? '#7A2233' : '#EAD8BE');
       art.innerHTML = garment(catOf(p)?.icon, p.color);
       chip.innerHTML = `<b>${esc(p.name)}</b><span style="direction:ltr;display:inline-block">${money(p.price)}</span><br><em>اكتشفيها</em>`;
       $('heroDots').innerHTML = heroList.map((_, k) => `<i class="${k === heroI ? 'on' : ''}"></i>`).join('');

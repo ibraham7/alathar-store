@@ -25,7 +25,7 @@
 .progress { position: fixed; top: 0; inset-inline: 0; height: 3px; z-index: 60; background: linear-gradient(90deg, var(--camel), var(--clay)); transform: scaleX(0); transform-origin: right; }
 .header .wrap { transition: height .35s var(--ease); }
 .header { transition: box-shadow .35s, background .35s; }
-.header.scrolled { box-shadow: 0 14px 30px -24px rgba(59, 42, 32, .6); background: rgba(246, 239, 227, .94); }
+.header.scrolled { box-shadow: 0 14px 30px -24px rgba(74, 19, 32, .6); background: rgba(248, 240, 227, .94); }
 .header.scrolled .wrap { height: 62px; }
 .brand img { transition: transform .8s var(--ease-out); }
 .brand:hover img { transform: rotate(-360deg); }
@@ -40,7 +40,7 @@
   display: grid; place-items: center; font-size: 12px; font-weight: 700; color: transparent;
 }
 .cursor.on { opacity: 1; }
-.cursor.link { width: 58px; height: 58px; margin: -29px 0 0 -29px; background: rgba(181, 101, 58, .16); }
+.cursor.link { width: 58px; height: 58px; margin: -29px 0 0 -29px; background: rgba(110, 31, 46, .14); }
 .cursor.view { width: 86px; height: 86px; margin: -43px 0 0 -43px; background: var(--brown); border-color: var(--brown); color: var(--cream); mix-blend-mode: normal; }
 .cursor-dot { position: fixed; top: 0; left: 0; z-index: 301; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--clay); pointer-events: none; opacity: 0; }
 .cursor-dot.on { opacity: 1; }
@@ -49,8 +49,8 @@
 /* ---------- الواجهة ---------- */
 .hero { position: relative; }
 .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .5; z-index: -1; animation: drift 16s ease-in-out infinite alternate; }
-.blob.a { width: 420px; height: 420px; background: #E7C9A4; top: -120px; inset-inline-start: -100px; }
-.blob.b { width: 340px; height: 340px; background: #D9B28E; bottom: 40px; inset-inline-end: 30%; animation-duration: 21s; animation-direction: alternate-reverse; }
+.blob.a { width: 420px; height: 420px; background: #EFCFC6; top: -120px; inset-inline-start: -100px; }
+.blob.b { width: 340px; height: 340px; background: #E8BFB2; bottom: 40px; inset-inline-end: 30%; animation-duration: 21s; animation-direction: alternate-reverse; }
 @keyframes drift { to { transform: translate(60px, 50px) scale(1.15); } }
 
 .hero h1 .w { display: inline-block; overflow: hidden; vertical-align: bottom; padding-block: .12em; margin-block: -.12em; }
@@ -66,7 +66,7 @@
 .hero-art { --mx: 0; --my: 0; }
 .arch {
   --a: var(--clay);
-  background: linear-gradient(170deg, color-mix(in srgb, var(--a) 78%, #fff) 0%, var(--a) 46%, color-mix(in srgb, var(--a) 66%, #2A1D15) 100%);
+  background: linear-gradient(170deg, color-mix(in srgb, var(--a) 78%, #fff) 0%, var(--a) 46%, color-mix(in srgb, var(--a) 66%, #2B1419) 100%);
   transform: translate(calc(var(--mx) * -12px), calc(var(--my) * -10px));
   transition: transform .5s var(--ease-out), background .8s; cursor: pointer; border: 0;
 }
@@ -79,7 +79,7 @@
   border: 0; text-align: start; cursor: pointer; font: inherit;
   transform: translate(calc(var(--mx) * -26px), calc(var(--my) * -20px)); transition: transform .6s var(--ease-out), box-shadow .3s;
 }
-.hero-chip:hover { box-shadow: 0 24px 44px -20px rgba(59, 42, 32, .6); }
+.hero-chip:hover { box-shadow: 0 24px 44px -20px rgba(74, 19, 32, .6); }
 .hero-chip em { display: inline-flex; gap: 6px; margin-top: 6px; font-style: normal; font-weight: 700; color: var(--clay-dark); font-size: 13.5px; }
 .hero-chip em::after { content: '←'; transition: transform .3s; }
 .hero-chip:hover em::after { transform: translateX(-5px); }
@@ -130,7 +130,7 @@
   transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
   transition: transform .5s var(--ease-out), box-shadow .4s; transform-style: preserve-3d; will-change: transform;
 }
-.card:hover .card-media { transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-8px) scale(1.015); box-shadow: 0 34px 50px -28px rgba(59, 42, 32, .6); }
+.card:hover .card-media { transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-8px) scale(1.015); box-shadow: 0 34px 50px -28px rgba(74, 19, 32, .6); }
 .card-media::after {
   content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .4s;
   background: radial-gradient(420px circle at var(--sx, 50%) var(--sy, 50%), rgba(255, 250, 240, .5), transparent 55%);

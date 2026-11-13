@@ -1,7 +1,7 @@
 // رسومات منتجات المكياج (بدون أشخاص) — تُستخدم عندما لا يكون للمنتج صورة.
 // اللون c هو «لون العرض» للمنتج؛ الغطاء داكن والحلقات ذهبية.
 (function () {
-  const CAP = '#2A1D15', GOLD = '#C9A77C';
+  const CAP = '#2B1419', GOLD = '#C9A77C';
   const L = 'fill="none" stroke="rgba(40,24,14,.28)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
   const SHINE = 'fill="rgba(255,250,240,.32)"';
   const SHADE = 'fill="rgba(40,24,14,.16)"';

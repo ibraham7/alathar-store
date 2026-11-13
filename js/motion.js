@@ -163,7 +163,7 @@
   function confetti(origin) {
     if (calm || !origin || !origin.animate) return;
     const r = origin.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-    const colors = ['#B5653A', '#B08D5B', '#6F6B45', '#DCCAAE', '#3B2A20', '#C97B4A'];
+    const colors = ['#6E1F2E', '#8E2F45', '#C27A86', '#E6D3B6', '#B8935F', '#4A1320'];
     for (let i = 0; i < 46; i++) {
       const p = document.createElement('i');
       p.className = 'confetti';

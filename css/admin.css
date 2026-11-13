@@ -16,13 +16,13 @@
 .tabs { display: flex; flex-direction: column; gap: 4px; }
 .tabs button {
   display: flex; justify-content: space-between; align-items: center; text-align: start;
-  background: none; border: 0; color: #D9C7AE; padding: 12px 16px; border-radius: 12px; font-weight: 500; font-size: 16px;
+  background: none; border: 0; color: #E9D6C6; padding: 12px 16px; border-radius: 12px; font-weight: 500; font-size: 16px;
 }
 .tabs button:hover { background: rgba(255, 255, 255, .07); }
 .tabs button[aria-current="true"] { background: var(--clay); color: #fff; font-weight: 700; }
 .pill { background: var(--cream); color: var(--brown); border-radius: 999px; font-size: 12px; font-weight: 800; padding: 1px 9px; }
 .side-foot { margin-top: auto; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
-.side-foot .link { color: #C9B69B; }
+.side-foot .link { color: #D9BFB4; }
 .side-foot .link:hover { color: #fff; }
 
 .main { padding: 34px clamp(18px, 3vw, 44px) 60px; min-width: 0; }
@@ -37,7 +37,7 @@
 .stat span { color: var(--muted); font-size: 14px; }
 .stat b { display: block; font-family: var(--display); font-size: 27px; color: var(--brown); direction: ltr; text-align: end; margin-top: 4px; }
 .stat.hot { background: var(--brown); border-color: var(--brown); }
-.stat.hot span { color: #D9C7AE; }
+.stat.hot span { color: #E9D6C6; }
 .stat.hot b { color: var(--cream); }
 
 .chart { display: flex; align-items: flex-end; gap: 6px; height: 190px; padding-top: 10px; }
@@ -60,12 +60,12 @@
 .thumb .garment { width: 78%; }
 .num { direction: ltr; text-align: end; white-space: nowrap; }
 .tag { display: inline-block; font-size: 12.5px; font-weight: 700; padding: 3px 11px; border-radius: 999px; background: var(--sand); color: var(--brown-2); white-space: nowrap; }
-.tag.new { background: #F3D9C6; color: var(--clay-dark); }
+.tag.new { background: #F3D8DB; color: var(--clay-dark); }
 .tag.confirmed { background: #E7E2C4; color: #55522F; }
 .tag.shipped { background: #DCE3D3; color: #3F5A3A; }
 .tag.delivered { background: var(--olive); color: #fff; }
 .tag.cancelled, .tag.off { background: #E6DAD3; color: #8A6E62; }
-.tag.low { background: #F3D9C6; color: var(--clay-dark); }
+.tag.low { background: #F3D8DB; color: var(--clay-dark); }
 .acts { display: flex; gap: 12px; justify-content: flex-end; white-space: nowrap; }
 
 .order { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; }
