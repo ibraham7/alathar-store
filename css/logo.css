@@ -1,0 +1,47 @@
+/* ===== شعار أثر ستور — الختم (خمري + سكري) ===== */
+:root { --wine: #6E1F2E; --wine-deep: #4A1320; --sukkari: #F2E6D0; }
+
+.logo { display: block; flex: none; }
+.lg { display: block; width: 100%; height: 100%; overflow: visible; direction: ltr; --lg-fg: var(--wine); }
+.lg .disc { fill: none; }
+.lg.solid { --lg-fg: var(--sukkari); }
+.lg.solid .disc { fill: var(--wine); }
+.lg text { fill: var(--lg-fg); }
+.lg .ln { stroke: var(--lg-fg); fill: none; }
+.lg .fl { fill: var(--lg-fg); }
+.lg .ar { font-family: 'Aref Ruqaa', 'Amiri', serif; font-weight: 700; }
+.lg .en { font-family: 'Cinzel', 'Times New Roman', serif; font-weight: 600; }
+
+/* الترويسة والتذييل */
+.brand .logo { width: 54px; height: 54px; transition: transform .9s cubic-bezier(.16, 1, .3, 1); }
+.brand:hover .logo { transform: rotate(-360deg); }
+.brand-name { font-family: 'Cinzel', serif; font-weight: 600; font-size: 21px; letter-spacing: 5px; color: var(--wine); direction: ltr; }
+.brand-sub { font-family: 'Cinzel', serif; font-size: 10.5px; letter-spacing: 8px; color: var(--camel); font-weight: 600; margin-top: 5px; }
+.header.scrolled .brand .logo { width: 46px; height: 46px; }
+.brand .logo { transition: transform .9s cubic-bezier(.16, 1, .3, 1), width .35s, height .35s; }
+
+/* شاشة الافتتاح */
+.loader { background: var(--wine-deep); }
+.loader .logo { width: min(230px, 56vw); height: min(230px, 56vw); margin: 0 auto; animation: sealIn 1.4s cubic-bezier(.16, 1, .3, 1) both; }
+.loader .lg { --lg-fg: var(--sukkari); width: 100%; height: 100%; margin: 0; }
+@keyframes sealIn { from { opacity: 0; transform: scale(.7) rotate(-35deg); } }
+
+/* الختم الدوّار في الواجهة */
+.seal > svg text { fill: var(--wine); }
+.seal .logo { position: absolute; inset: 29px; width: 60px; height: 60px; }
+.seal .logo svg { animation: none; }
+
+/* قسم القصة */
+.story .logo { width: 190px; height: 190px; animation: float 7s ease-in-out infinite; filter: drop-shadow(0 20px 30px rgba(0, 0, 0, .35)); }
+
+/* لوحة التحكم */
+.login-card .logo { width: 124px; height: 124px; margin: 0 auto 18px; }
+.side .brand-name { color: var(--sukkari); }
+
+@media (max-width: 860px) {
+  .brand .logo { width: 46px; height: 46px; }
+  .brand-name { font-size: 16px; letter-spacing: 2.5px; }
+  .brand-sub { font-size: 9px; letter-spacing: 6px; }
+  .seal .logo { inset: 22px; width: 44px; height: 44px; }
+  .story .logo { width: 150px; height: 150px; }
+}

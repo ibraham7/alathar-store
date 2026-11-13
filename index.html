@@ -3,40 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>الأثر — ملابس رجالية</title>
-  <meta name="description" content="الأثر — ملابس رجالية بخامات طبيعية وألوان الأرض.">
+  <title>أثر ستور — ملابس رجالية</title>
+  <meta name="description" content="أثر ستور — ملابس رجالية بخامات طبيعية وألوان الأرض.">
   <meta name="theme-color" content="#3B2A20">
   <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cinzel:wght@600&family=Reem+Kufi:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/logo.css">
 </head>
 <body>
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-inner">
-      <svg viewBox="0 0 64 64" fill="none">
-        <circle class="ring" cx="32" cy="32" r="28" stroke="#C9A77C" stroke-width="1"/>
-        <path class="alif" d="M39 15v30" stroke="#EFE4D2" stroke-width="5" stroke-linecap="round"/>
-        <circle class="dot" cx="29.5" cy="46" r="3.1" fill="#C97B4A"/>
-        <circle class="dot" cx="21.2" cy="44.2" r="2.3" fill="#C97B4A" opacity=".75"/>
-        <circle class="dot" cx="14.6" cy="40.6" r="1.6" fill="#C97B4A" opacity=".5"/>
-      </svg>
-      <div class="loader-name">الأثر</div>
-      <div class="loader-sub">AL ATHAR</div>
-    </div>
+    <span class="logo" data-logo="seal"></span>
   </div>
   <div class="progress" id="progress"></div>
   <div class="announce" id="announce" hidden></div>
 
   <header class="header">
     <div class="wrap">
-      <a class="brand" href="#top" aria-label="الأثر — الرئيسية">
-        <img src="assets/logo-mark.svg" alt="">
+      <a class="brand" href="#top" aria-label="أثر ستور — الرئيسية">
+        <span class="logo" data-logo="mini"></span>
         <div>
-          <div class="brand-name">الأثر</div>
-          <div class="brand-sub">AL ATHAR</div>
+          <div class="brand-name">ATHAR</div>
+          <div class="brand-sub">STORE</div>
         </div>
       </a>
       <nav class="nav" aria-label="التنقل الرئيسي">
@@ -69,8 +60,8 @@
           <div class="sun"></div>
           <div class="seal" aria-hidden="true">
             <svg viewBox="0 0 120 120"><defs><path id="sealPath" d="M60 60m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0"/></defs>
-              <text><textPath href="#sealPath">AL ATHAR · MENSWEAR · AL ATHAR · MENSWEAR ·</textPath></text></svg>
-            <img src="assets/logo-mark.svg" alt="">
+              <text textLength="286" lengthAdjust="spacing"><textPath href="#sealPath">ATHAR STORE ✦ ATHAR STORE ✦ </textPath></text></svg>
+            <span class="logo" data-logo="mini"></span>
           </div>
           <button class="arch" id="heroArt" type="button" aria-label="عرض القطعة المختارة"></button>
           <button class="hero-chip" id="heroChip" type="button"><b>مجموعة الموسم</b><span>درجات الرمل والطين والزيتون</span></button>
@@ -122,9 +113,9 @@
     </section>
 
     <section class="section story" id="story">
-      <div class="ghost-text" aria-hidden="true">AL ATHAR — AL ATHAR — AL ATHAR</div>
+      <div class="ghost-text" aria-hidden="true">ATHAR STORE — ATHAR STORE — ATHAR STORE</div>
       <div class="wrap">
-        <img src="assets/logo-mark.svg" alt="" data-reveal>
+        <span class="logo" data-logo="seal-solid" data-reveal></span>
         <div data-reveal style="--i:1">
           <h2>لكل خطوة أثر</h2>
           <p>نؤمن أن اللباس ليس ما تلبسه اليوم فقط، بل الانطباع الذي تتركه. لذلك نختار خاماتنا بعناية، ونستلهم ألواننا من الأرض: الرمل، الطين، والزيتون — قطع هادئة تدوم وتترك أثرها.</p>
@@ -136,14 +127,14 @@
   <footer class="footer" id="contact">
     <div class="wrap">
       <a class="brand" href="#top">
-        <img src="assets/logo-mark.svg" alt="">
+        <span class="logo" data-logo="mini"></span>
         <div>
-          <div class="brand-name">الأثر</div>
-          <div class="brand-sub">AL ATHAR</div>
+          <div class="brand-name">ATHAR</div>
+          <div class="brand-sub">STORE</div>
         </div>
       </a>
       <div class="contacts" id="contacts"></div>
-      <div class="copy">© <span id="year"></span> الأثر — جميع الحقوق محفوظة</div>
+      <div class="copy">© <span id="year"></span> أثر ستور — جميع الحقوق محفوظة</div>
     </div>
   </footer>
 
@@ -166,6 +157,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
+  <script src="js/logo.js"></script>
   <script src="js/api.js"></script>
   <script src="js/garments.js"></script>
   <script src="js/motion.js"></script>

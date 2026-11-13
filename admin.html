@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>لوحة التحكم — الأثر</title>
+  <title>لوحة التحكم — أثر ستور</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cinzel:wght@600&family=Reem+Kufi:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/logo.css">
 </head>
 <body class="admin">
 
   <!-- تسجيل الدخول -->
   <section class="login" id="login">
     <form class="login-card" id="loginForm">
-      <img src="assets/logo-mark.svg" alt="" width="72" height="72">
-      <h1>لوحة تحكم الأثر</h1>
+      <span class="logo" data-logo="seal-solid"></span>
+      <h1>لوحة تحكم أثر ستور</h1>
       <p>أدخل كلمة السر للمتابعة</p>
       <label class="field"><span>كلمة السر</span><input type="password" id="loginPass" autocomplete="current-password" required></label>
       <p class="err" id="loginErr" hidden></p>
@@ -31,8 +32,8 @@
   <div class="shell" id="shell" hidden>
     <aside class="side">
       <a class="brand" href="index.html" target="_blank" rel="noopener">
-        <img src="assets/logo-mark.svg" alt="">
-        <div><div class="brand-name">الأثر</div><div class="brand-sub">ADMIN</div></div>
+        <span class="logo" data-logo="mini"></span>
+        <div><div class="brand-name">ATHAR</div><div class="brand-sub">ADMIN</div></div>
       </a>
       <nav class="tabs" id="tabs">
         <button type="button" data-tab="overview" aria-current="true">نظرة عامة</button>
@@ -184,6 +185,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
+  <script src="js/logo.js"></script>
   <script src="js/api.js"></script>
   <script src="js/garments.js"></script>
   <script src="js/admin.js"></script>
