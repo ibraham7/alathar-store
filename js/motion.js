@@ -124,7 +124,7 @@
     });
   }
 
-  // ---------- ألوان الأرض ----------
+  // ---------- شريط الدرجات ----------
   const palette = $('palette');
   if (palette) {
     palette.addEventListener('click', (e) => {
@@ -135,7 +135,7 @@
     palette.addEventListener('mouseenter', () => palette.querySelectorAll('.on').forEach((x) => x.classList.remove('on')));
   }
 
-  // ---------- طيران القطعة إلى السلة ----------
+  // ---------- طيران المنتج إلى السلة ----------
   function fly(fromEl, html) {
     const to = $('cartBtn');
     if (calm || !fromEl || !to || !fromEl.animate) return bump();

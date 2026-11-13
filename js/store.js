@@ -84,7 +84,7 @@
     heroStart();
   }
 
-  // ---------- القطعة المختارة في الواجهة (تتبدّل تلقائياً) ----------
+  // ---------- المنتج المختار في الواجهة (تتبدّل تلقائياً) ----------
   let heroList = [], heroI = 0, heroTimer = null;
   const isLight = (hex) => {
     const n = parseInt(safeColor(hex).slice(1, 7).padEnd(6, '0'), 16);
@@ -96,7 +96,7 @@
     const paint = () => {
       art.style.setProperty('--a', isLight(p.color) ? '#B5653A' : '#DCCAAE');
       art.innerHTML = garment(catOf(p)?.icon, p.color);
-      chip.innerHTML = `<b>${esc(p.name)}</b><span style="direction:ltr;display:inline-block">${money(p.price)}</span><br><em>اكتشفها</em>`;
+      chip.innerHTML = `<b>${esc(p.name)}</b><span style="direction:ltr;display:inline-block">${money(p.price)}</span><br><em>اكتشفيها</em>`;
       $('heroDots').innerHTML = heroList.map((_, k) => `<i class="${k === heroI ? 'on' : ''}"></i>`).join('');
       art.classList.remove('swap'); chip.classList.remove('swap');
     };
@@ -134,7 +134,7 @@
     $('grid').innerHTML = list.map((p, i) => {
       const badge = p.stock <= 0 ? `<span class="badge out">نفذت الكمية</span>`
         : p.old_price > p.price ? `<span class="badge sale">خصم</span>`
-        : p.is_featured ? `<span class="badge">مختارة</span>` : '';
+        : p.is_featured ? `<span class="badge">مختار</span>` : '';
       return `<button class="card" type="button" data-id="${esc(p.id)}" style="--i:${i % 4}">
         <div class="card-media" style="--c:${safeColor(p.color)}">${media(p)}${badge}<span class="quick">عرض سريع</span></div>
         <div class="card-body">
@@ -171,7 +171,7 @@
         <h2 id="pmName">${esc(p.name)}</h2>
         ${priceHtml(p)}
         <p class="desc">${esc(p.description)}</p>
-        ${p.sizes.length ? `<div><div class="label">المقاس</div><div class="sizes">${p.sizes.map((s) =>
+        ${p.sizes.length ? `<div><div class="label">الدرجة</div><div class="sizes">${p.sizes.map((s) =>
           `<button class="size" type="button" data-size="${esc(s)}" aria-pressed="${pick.size === s}">${esc(s)}</button>`).join('')}</div></div>` : ''}
         ${stockNote}
         <div class="pm-actions">
@@ -195,7 +195,7 @@
       pick.qty = Math.max(1, Math.min(max, pick.qty + Number(q.dataset.q)));
       renderProduct();
     } else if (e.target.closest('#addBtn')) {
-      if (p.sizes.length && !pick.size) return toast('اختر المقاس أولاً');
+      if (p.sizes.length && !pick.size) return toast('اختاري الدرجة أولاً');
       if (inCart(p.id) + pick.qty > p.stock) return toast('الكمية المطلوبة أكبر من المتوفر');
       const line = state.cart.find((l) => l.id === p.id && l.size === pick.size);
       if (line) line.qty += pick.qty; else state.cart.push({ id: p.id, size: pick.size, qty: pick.qty });
@@ -282,7 +282,7 @@
       const p = byId(l.id);
       return `<div class="line" style="--i:${i}">
         <div class="line-media" style="--c:${safeColor(p.color)}">${media(p)}</div>
-        <div><b>${esc(p.name)}</b><small>${l.size ? `المقاس: <span dir="ltr">${esc(l.size)}</span>` : ''}</small>
+        <div><b>${esc(p.name)}</b><small>${l.size ? `الدرجة: ${esc(l.size)}` : ''}</small>
           <div><span class="qty"><button type="button" data-line="${i}" data-d="1" aria-label="زيادة">+</button><span>${l.qty}</span><button type="button" data-line="${i}" data-d="-1" aria-label="إنقاص">−</button></span></div>
         </div>
         <div style="text-align:end"><span class="price">${money(p.price * l.qty)}</span><br><button class="link" type="button" data-rm="${i}">حذف</button></div>

@@ -1,4 +1,4 @@
--- الأثر — مخطط قاعدة البيانات (Supabase / Postgres)
+-- أثر ستور — مخطط قاعدة البيانات (Supabase / Postgres)
 -- مطبّق على المشروع كـ migration باسم athar_store_init.
 -- كلمة سر الأدمن لا تُحفظ هنا: تُضبط مرة واحدة بالأمر الموجود في آخر الملف.
 
@@ -8,7 +8,7 @@ create schema if not exists private;
 create table public.categories (
   id uuid primary key default gen_random_uuid(),
   name text not null,
-  icon text not null default 'shirt',
+  icon text not null default 'other',
   sort int not null default 0
 );
 
@@ -340,23 +340,27 @@ on conflict (id) do nothing;
 
 -- ============ Seed (بيانات مبدئية — تُعدَّل من لوحة التحكم) ============
 insert into public.settings (id, currency, hero_title, hero_subtitle, announcement)
-values (1, '$', 'ما يبقى بعدك… هو الأثر', 'ملابس رجالية بخامات طبيعية وألوان الأرض، مصمّمة لتدوم.', 'شحن مجاني للطلبات الأولى — الدفع عند الاستلام');
+values (1, '$', 'جمالكِ… يترك أثراً', 'مكياج بدرجات مختارة بعناية، لإطلالة تبقى في الذاكرة.', 'شحن مجاني للطلبات الأولى — الدفع عند الاستلام');
 
+-- icon يحدد رسمة المنتج الذي لا صورة له (انظر js/art.js)
 insert into public.categories (name, icon, sort) values
- ('قمصان','shirt',1), ('تيشيرتات','tshirt',2), ('بناطيل','pants',3), ('جاكيتات','jacket',4), ('هوديز','hoodie',5);
+ ('أحمر الشفاه','lipstick',1), ('كريم الأساس','foundation',2), ('ظلال العيون','palette',3),
+ ('الماسكارا','mascara',4), ('البودرة والبلاشر','compact',5), ('الفرش','brush',6), ('طلاء الأظافر','nail',7);
 
+-- العمود sizes يحمل الدرجات / الخيارات التي يختار منها الزبون
 insert into public.products (name, description, price, old_price, category_id, sizes, color, stock, is_featured)
 select v.name, v.description, v.price, v.old_price, c.id, v.sizes, v.color, v.stock, v.featured
 from (values
- ('قميص كتان — رملي', 'كتان طبيعي خفيف بقصّة مريحة وياقة كلاسيكية.', 49, null::numeric, 'shirt', array['S','M','L','XL'], '#D9C3A0', 14, true),
- ('قميص أكسفورد — عاجي', 'قطن أكسفورد متين بملمس ناعم، مناسب للعمل والمناسبات.', 45, 55, 'shirt', array['M','L','XL','XXL'], '#EDE3D0', 9, false),
- ('تيشيرت قطن ثقيل — طيني', 'قطن 240 غرام بقصّة واسعة قليلاً ولون طيني دافئ.', 26, null, 'tshirt', array['S','M','L','XL'], '#B5653A', 22, true),
- ('تيشيرت أساسي — زيتوني', 'تيشيرت يومي بقماش ناعم يحافظ على شكله بعد الغسيل.', 22, null, 'tshirt', array['S','M','L','XL','XXL'], '#6F6B45', 30, false),
- ('بنطال تشينو — جملي', 'تشينو قطني بقصّة مستقيمة وخصر مريح.', 58, 70, 'pants', array['30','32','34','36'], '#B08D5B', 12, true),
- ('بنطال كتان واسع — بنّي', 'كتان مغسول بقصّة واسعة وخصر مطاطي مخفي.', 62, null, 'pants', array['30','32','34','36','38'], '#5A4030', 3, false),
- ('جاكيت سويدي — كاميل', 'جاكيت بملمس سويدي ناعم وبطانة خفيفة.', 129, null, 'jacket', array['M','L','XL'], '#A9744A', 6, true),
- ('أوفرشيرت — زيتي', 'قميص-جاكيت من قطن ثقيل بجيوب أمامية.', 84, 99, 'jacket', array['M','L','XL','XXL'], '#4F4D34', 8, false),
- ('هودي ثقيل — رملي', 'فليس قطني ثقيل بقبعة مزدوجة وقصّة مريحة.', 68, null, 'hoodie', array['S','M','L','XL'], '#CDB592', 15, true)
+ ('أحمر شفاه مخملي — خمري', 'قوام مخملي ولون غني من أول لمسة.', 18, null::numeric, 'lipstick', array['خمري','توتي','وردي غامق'], '#7A1F2E', 20, true),
+ ('أحمر شفاه مطفي — نيود', 'لمسة مطفية ناعمة بدرجات هادئة لكل يوم.', 16, 20, 'lipstick', array['نيود','كراميل','خوخي'], '#B9806A', 24, false),
+ ('كريم أساس سائل', 'قوام خفيف يتوزّع بسهولة ويمنح مظهراً متجانساً.', 32, null, 'foundation', array['عاجي','بيج','عسلي','برونزي'], '#D9B38C', 14, true),
+ ('كريم أساس مطفي', 'تغطية أعلى بلمسة نهائية مطفية.', 36, null, 'foundation', array['عاجي','بيج','عسلي'], '#C99A72', 9, false),
+ ('باليت ظلال — درجات ترابية', 'ست درجات متناسقة من الفاتح إلى الغامق.', 42, 52, 'palette', array[]::text[], '#A0613F', 10, true),
+ ('باليت ظلال — درجات وردية', 'ست درجات وردية للإطلالات الناعمة والجريئة.', 42, null, 'palette', array[]::text[], '#C27A86', 8, false),
+ ('ماسكارا تكثيف', 'فرشاة تفصل الرموش وتمنحها كثافة واضحة.', 19, null, 'mascara', array['أسود','بني'], '#3A2A26', 30, true),
+ ('بلاشر مضغوط', 'لون ناعم يُبنى بالتدريج ويمتزج بسهولة.', 22, null, 'compact', array['خوخي','وردي','برونزي'], '#E0907A', 16, true),
+ ('فرشاة بودرة ناعمة', 'شعيرات ناعمة وكثيفة لتوزيع متساوٍ.', 15, null, 'brush', array[]::text[], '#D2AE8A', 3, false),
+ ('طلاء أظافر', 'لون لامع بتغطية واضحة من طبقتين.', 9, null, 'nail', array['خمري','نيود','أحمر'], '#6E1F2E', 40, false)
 ) as v(name, description, price, old_price, icon, sizes, color, stock, featured)
 join public.categories c on c.icon = v.icon;
 

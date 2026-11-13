@@ -108,7 +108,7 @@
       stat('إجمالي المبيعات', money(s.revenue)) +
       stat('طلبات جديدة', s.new_count) +
       stat('عدد الطلبات', s.orders_count) +
-      stat('قطع مباعة', s.items_sold);
+      stat('منتجات مباعة', s.items_sold);
 
     const max = Math.max(1, ...s.daily.map((d) => Number(d.total)));
     $('chart').innerHTML = s.daily.map((d) => {
@@ -119,7 +119,7 @@
     }).join('');
 
     $('top').innerHTML = s.top_products.length
-      ? s.top_products.map((t) => `<div class="rank"><span>${esc(t.name)}</span><b>${t.qty} قطعة</b></div>`).join('')
+      ? s.top_products.map((t) => `<div class="rank"><span>${esc(t.name)}</span><b>${t.qty} مباع</b></div>`).join('')
       : `<p class="muted">لا توجد مبيعات بعد.</p>`;
     $('low').innerHTML = s.low_stock.length
       ? s.low_stock.map((t) => `<div class="rank"><span>${esc(t.name)}</span><b>${t.stock ? `بقي ${t.stock}` : 'نفذ'}</b></div>`).join('')
@@ -148,7 +148,7 @@
           ${place ? `<div class="order-meta">${place}</div>` : ''}
           ${o.notes ? `<div class="order-meta">ملاحظة: ${esc(o.notes)}</div>` : ''}</div>
         <div class="order-items">${o.items.map((i) =>
-          `<div><span>${esc(i.product_name)}${i.size ? ` <span class="muted" dir="ltr">(${esc(i.size)})</span>` : ''} × ${i.qty}</span><span class="num">${money(i.unit_price * i.qty)}</span></div>`).join('')}
+          `<div><span>${esc(i.product_name)}${i.size ? ` <span class="muted">(${esc(i.size)})</span>` : ''} × ${i.qty}</span><span class="num">${money(i.unit_price * i.qty)}</span></div>`).join('')}
           ${Number(o.shipping_fee) ? `<div><span class="muted">التوصيل</span><span class="num">${money(o.shipping_fee)}</span></div>` : ''}
         </div>
         <div class="order-bottom">
@@ -213,7 +213,7 @@
     $('products').innerHTML = `<thead><tr><th></th><th>المنتج</th><th>القسم</th><th>السعر</th><th>المخزون</th><th>الحالة</th><th></th></tr></thead><tbody>` +
       data.products.map((p) => `<tr>
         <td><div class="thumb" style="--c:${safeColor(p.color)}">${media(p)}</div></td>
-        <td><b>${esc(p.name)}</b>${p.is_featured ? ' <span class="tag">مختارة</span>' : ''}<div class="muted" dir="ltr" style="text-align:end">${esc(p.sizes.join(' · '))}</div></td>
+        <td><b>${esc(p.name)}</b>${p.is_featured ? ' <span class="tag">مختار</span>' : ''}<div class="muted">${esc(p.sizes.join(' · '))}</div></td>
         <td>${esc(catOf(p)?.name || '—')}</td>
         <td class="num">${money(p.price)}</td>
         <td><span class="tag ${p.stock <= 3 ? 'low' : ''}">${p.stock}</span></td>

@@ -125,7 +125,7 @@
           <div class="preview" id="preview"></div>
           <label class="btn ghost sm block upload">رفع صورة<input type="file" id="imageFile" accept="image/jpeg,image/png,image/webp" hidden></label>
           <button class="link" type="button" id="removeImage" hidden>إزالة الصورة</button>
-          <p class="hint">بدون صورة يظهر رسم القطعة بلون العرض.</p>
+          <p class="hint">بدون صورة يظهر رسم المنتج بلون العرض.</p>
         </div>
         <div>
           <label class="field"><span>اسم المنتج</span><input name="name" required></label>
@@ -136,12 +136,12 @@
             <label class="field"><span>القسم</span><select name="category_id"></select></label>
             <label class="field"><span>الكمية في المخزون</span><input name="stock" type="number" min="0" step="1" dir="ltr" required></label>
           </div>
-          <label class="field"><span>المقاسات (افصل بينها بفاصلة)</span><input name="sizes" dir="ltr" placeholder="S, M, L, XL"></label>
+          <label class="field"><span>الدرجات / الخيارات (افصل بينها بفاصلة)</span><input name="sizes" placeholder="نيود، وردي، خمري"></label>
           <div class="row2">
             <label class="field"><span>لون العرض</span><input name="color" type="color" value="#B08968"></label>
             <div class="checks">
               <label><input type="checkbox" name="is_active" checked> ظاهر في المتجر</label>
-              <label><input type="checkbox" name="is_featured"> قطعة مختارة</label>
+              <label><input type="checkbox" name="is_featured"> منتج مختار</label>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@
       <input type="hidden" name="id">
       <label class="field"><span>اسم القسم</span><input name="name" required></label>
       <div class="row2">
-        <label class="field"><span>شكل القطعة</span><select name="icon"></select></label>
+        <label class="field"><span>شكل المنتج</span><select name="icon"></select></label>
         <label class="field"><span>الترتيب</span><input name="sort" type="number" step="1" dir="ltr" value="0"></label>
       </div>
       <div class="form-actions">
@@ -187,7 +187,7 @@
 
   <script src="js/logo.js"></script>
   <script src="js/api.js"></script>
-  <script src="js/garments.js"></script>
+  <script src="js/art.js"></script>
   <script src="js/admin.js"></script>
 </body>
 </html>
